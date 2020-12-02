@@ -86,7 +86,34 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'How to Grow the Fuck Up: A Guide to Humans',
+    date: '2020',
+    firstParagraph: `When I was like four years old, despite my mother warning me not to, I put my finger on a hot stove. The stove was red and bright and shiny and I knew yummy food came from it, so the allure was irresistible. `,
+
+    secondParagraph: `That day I learned an important lesson: really hot things suck. They burn you. And you want to avoid touching them again.`,
+
+    thirdParagraph: `Around the same time, I made another important discovery. The ice cream that my parents would treat me on occasion was stored in the freezer, on a shelf that could be easily accessed if I stood on my tippy toes.`
+  },
+  {
+    title: 'The One Rule for Life',
+    date: '2020',
+    firstParagraph: `Depending on your perspective, Immanuel Kant was either the most boring person on the planet or a productivity hacker’s wet dream. For over 40 years, he woke up every morning at 5:00 AM and wrote for exactly three hours. He would then lecture at the same university for exactly four hours. He followed that up with lunch at the same restaurant each day. Then, in the afternoon, he would go on an extended walk through the same park, on the same route, leaving and returning home at the exact same time. Every day.`,
+
+    secondParagraph: `Kant spent his entire life in Königsberg, Prussia. I mean that literally. He never left the city. Despite the sea being an hour away, he never saw it. `,
+
+    thirdParagraph: `Kant was efficiency personified. He was so mechanical in his habits that his neighbors joked they could tune their clocks based on when he left his apartment each day. He would leave for his daily walk at 3:30 PM, have dinner with the same friend every evening, and return home to finish work and go to bed at exactly 10:00 PM.`
+  },
+  {
+    title: 'The Most Important Question of Your Life',
+    date: '2020',
+    firstParagraph: `Everybody wants what feels good. Everyone wants to live a carefree, happy and easy life, to fall in love and have amazing sex and relationships, to look perfect and make money, and be popular and well-respected and admired and a total baller to the point that people part like the Red Sea when you walk into the room.`,
+
+    secondParagraph: `If I ask you, “What do you want out of life?” and you say something like, “I want to be happy and have a great family and a job I like,” it’s so ubiquitous it doesn’t even mean anything. `,
+
+    thirdParagraph: `A more interesting question—a question that perhaps you’ve never considered before—is what pain do you want in your life? What are you willing to struggle for? Because that seems to be a greater determinant of how our lives turn out.`
+  },
 ];
 
 /*
@@ -102,10 +129,68 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
 
+
+//check on accessing objects within an array
+//parent element
+const articles = document.querySelector('.articles');
+//function
+function articleMaker(articleData) {
+  // function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+
+  const article = document.createElement('div', 'article-open');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const firstPar = document.createElement('p');
+  const secondPar = document.createElement('p');
+  const thirdPar = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(firstPar);
+  article.appendChild(secondPar);
+  article.appendChild(thirdPar);
+  article.appendChild(expandButton);
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  articleTitle.textContent = articleData.title;
+  articleDate.textContent = articleData.date;
+  firstPar.textContent = articleData.firstParagraph;
+  secondPar.textContent = articleData.secondParagraph;
+  thirdPar.textContent = articleData.thirdParagraph;
+  expandButton.textContent = '+';
+
+
+  expandButton.addEventListener('click', (event) => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+}
+
+// const test = articleMaker({data});
+// console.log(test);
+
+const articleElements = data.map((data) => {
+  return articleMaker(data);
+});
+
+articleElements.forEach((article) => {
+  articles.appendChild(article);
+});
+
+
+
+
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
-
+  
   Step 3: Don't forget to return something from your function!
 
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component

@@ -13,10 +13,10 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 **Follow these steps to set up and work on your project:**
 
-* [ ] Create a forked copy of this project.
+* [X] Create a forked copy of this project.
 * [ ] Add your team lead as collaborator on Github.
-* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+* [X] Clone your OWN version of the repository (Not Lambda's by mistake!).
+* [X] Create a new branch: git checkout -b `<firstName-lastName>`.
 * [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 * [ ] Push commits: git push origin `<firstName-lastName>`.
 
@@ -26,16 +26,16 @@ In this project we are going to be building a news feed reader. The goal is to h
 
 ### Launching the project
 
-* [ ] Navigate to the root of the project with your command line.
-* [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
-* [ ] Run `npm start` to compile your project and launch a development server.
-* [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+* [X] Navigate to the root of the project with your command line.
+* [X] Run `npm install` to download any dependencies listed in the `package.json` file.
+* [X] Run `npm start` to compile your project and launch a development server.
+* [X] Navigate Chrome to the URL indicated in the output of the `npm start` command.
 
-### Part 1: The Articles Component
+### Part 1: The Articles Component   - X
 
-* Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM.
+* Follow the instructions found in the Articles.js file to complete the JavaScript functionality and add the components to the DOM. 
 
-### Part 2: Add Articles
+### Part 2: Add Articles     - X
 
 * Now that we have our components built, add a few articles of your own to the data array. Notice how our JavaScript code automatically creates the new articles. Write the code once and add as many components as you want all while maintaining the functionality we built!
 
